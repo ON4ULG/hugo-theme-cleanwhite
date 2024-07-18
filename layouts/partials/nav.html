@@ -26,7 +26,11 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{{ "/" | relLangURL }}">All Posts</a>
+			{{ with .Site.Params.PostsTitle }}
+			    <a href="{{ "/" | relLangURL }}">{{ . }}</a>
+			{{ else }}
+			    <a href="{{ "/" | relLangURL }}">All Posts</a>
+			{{ end }}
                     </li>
                     {{ if not .Site.Params.omit_categories }}
                         {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
