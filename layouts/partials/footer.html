@@ -165,49 +165,59 @@
                             </span>
                         </a>
                     </li>
-            {{ end }}
-            {{ with .Site.Params.social.xing }}
-            <li>
-                <a target="_blank" href="{{ . }}">
-                    <span class="fa-stack fa-lg">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            {{ end }}
-            {{ with .Site.Params.social.instagram }}
-            <li>
-                <a target="_blank" href="{{ . }}">
-                    <span class="fa-stack fa-lg">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            {{ end }}
-            {{ with .Site.Params.social.flickr }}
-            <li>
-                <a target="_blank" href="{{ . }}">
-                    <span class="fa-stack fa-lg">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-flickr fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-           {{ end }}
-           {{ if .Site.Params.social.rss }}
-                   <li>
-                       <a href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fas fa-circle fa-stack-2x"></i>
-                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-            {{ end }}
-             </ul>
-		<p class="copyright text-muted">
+                    {{ end }}
+                    {{ with .Site.Params.social.xing }}
+                    <li>
+                        <a target="_blank" href="{{ . }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{ with .Site.Params.social.instagram }}
+                    <li>
+                        <a target="_blank" href="{{ . }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{ with .Site.Params.social.flickr }}
+                    <li>
+                        <a target="_blank" href="{{ . }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-flickr fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{ with .Site.Params.social.matrix }}
+                    <li>
+                        <a target="_blank" href="{{ . }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fa-regular fa-message fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>                        
+                    </li>
+                    {{ end }}
+                    {{ if .Site.Params.social.rss }}
+                    <li>
+                        <a href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" >
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+		        <p class="copyright text-muted">
                     Copyright &copy; {{ .Site.Title }} {{ now.Year }} {{- if .Site.Params.icp }} | {{ with .Site.Params.icp }}{{ . | markdownify }}{{ end }}{{- end}}
                     {{ if .Site.Params.upstreamAttribution }}
                     <br>
